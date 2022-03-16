@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tickers</title>
+		<link rel="icon" href="data:,">
+		<link rel="stylesheet" href="static/index.css">
+		<script> // global constants
+			const TICKERS_COUNT = {{ config.TICKERS_COUNT }};
+			const TICKERS_WINDOW = {{ config.TICKERS_WINDOW }};
+			const TICKERS_DIGITS = {{ config.TICKERS_DIGITS }};
+			
+			const HORIZONTAL_MARGIN = {{ config.HORIZONTAL_MARGIN }};
+			const VERTICAL_MARGIN = {{ config.VERTICAL_MARGIN }};
+			
+			const PTS_RADIUS_PERCENT = {{ config.PTS_RADIUS_PERCENT }};
+			
+			const FONT_ENLARGEMENT = {{ config.FONT_ENLARGEMENT }};
+			const FONT_NAME = "{{ config.FONT_NAME }}";
+			const FONT_MOD = "{{ config.FONT_MOD }}";
+			
+			const COLOR_BACKGROUND = "{{ config.COLOR_BACKGROUND }}";
+			const COLOR_OBJECT = "{{ config.COLOR_OBJECT }}";
+						
+			const PI2 = 2 * Math.PI;
+		</script>
+		<style>
+			.canvas_wrapper {
+				background-color: "{{ config.COLOR_BACKGROUND }}";
+			}
+		</style>
+		<script type="text/javascript" src="static/canvas.js"></script>
+		<script type="text/javascript" src="static/handlers.js"></script>
+	</head>
+	<body onload="init();">
+		<header>
+			<div class="header_wrapper">
+				<div class="ticker_wrapper">
+					<select class="select_tickers" id="tickers" autofocus></select>
+				</div>
+				<div class="ranger_wrapper">
+					<div class="range_div">
+						<input class="range_input" id="range_start">
+					</div>
+					<div class="range_div">
+						<input class="range_input" id="range_finish">
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="canvas_wrapper" id="draw_wrap">
+			<canvas class="canvas_draw" id="draw"></canvas>
+		</div>
+	</body>
+</html>
